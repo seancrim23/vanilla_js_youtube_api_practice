@@ -1,20 +1,44 @@
 <html>
     <head>
         <title>Fun Javascript Youtube App</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
-        <h1 style="text-align: center">Fun Javascript Youtube App</h1>
-        <h2 style="text-align: center">Do some fun stuff with the Youtube API!</h2>
+        <div class="jumbotron text-center">
+            <h1>Fun Javascript Youtube App</h1>
+            <p>Do some fun stuff with the Youtube API!</p>
+        </div>
         
-        <p class="p__auth">If you would like to authorize yourself, you will have to click this button:         
-            <button class="btn__auth">Click me to authorize yourself!</button>
-        </p>
-        
-        <form class="search" style="display: none">
-            <input class="field__search" type="text" placeholder="Enter a youtube keyword to search for...">
-            <button class="btn__search">Search</button>
+        <div class="container">  
+            <header class="header">   
+                <div style="text-align:center">
+                    <button class="btn__auth btn btn-primary">Click me to authorize yourself!</button>
+                </div>
+        <form class="search" style="display: none; text-align:center">
+            <div class="form-group">
+                <label for="field__search">Enter a keyword to search on Youtube!</label>
+                <input class="field__search" id="field__search" type="text" placeholder="Type here..."><br>
+                <button class="btn__search btn btn-primary">Search</button>
+            </div>
         </form>
+                </header>
         
+        <div class="row">    
+            <div class="col-sm">
+                <div class="results__list">
+            
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="indiv__video">
+                
+                </div>
+            </div>
+            <div class="col-sm">
+            </div>
+        </div>
+        
+        </div>  
         <script src="https://apis.google.com/js/api.js"></script>
     </body>
 </html>

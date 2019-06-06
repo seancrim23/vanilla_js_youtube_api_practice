@@ -1,3 +1,5 @@
+import { key, clientId } from './base';
+
 export async function authenticate() {
       try{
           await gapi.auth2.getAuthInstance()
@@ -10,7 +12,7 @@ export async function authenticate() {
 };
 
 export function loadClient() {
-    gapi.client.setApiKey("AIzaSyDxeBWGUUKzaivw2RgEP4ScmgvlEoRqOUE");
+    gapi.client.setApiKey(`${key}`);
     try{
     gapi.client.load('https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest');
         console.log('GAPI client loaded for API');
@@ -20,5 +22,5 @@ export function loadClient() {
   }
 
 gapi.load("client:auth2", function() {
-    gapi.auth2.init({client_id: "220287251096-nn7rddlabk2hbenkmp02pah8rv2jb9d7.apps.googleusercontent.com"});
+    gapi.auth2.init({client_id: `${clientId}`});
 });

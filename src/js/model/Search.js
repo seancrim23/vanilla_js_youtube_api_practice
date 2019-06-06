@@ -10,7 +10,8 @@ export default class Search {
                 "maxResults": 25,
                 "q": `${this.query}`
             });
-            console.log(res.result.items);
+            //console.log(res.result.items);
+            return res.result.items;
         }catch(e){
             console.log(e);
         }
