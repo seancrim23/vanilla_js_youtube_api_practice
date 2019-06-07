@@ -8,9 +8,9 @@ export default class Search {
             const res = await gapi.client.youtube.search.list({
                 "part": "snippet",
                 "maxResults": 25,
-                "q": `${this.query}`
+                "q": `${this.query}`,
+                "type": "video"
             });
-            //console.log(res.result.items);
             return res.result.items;
         }catch(e){
             console.log(e);

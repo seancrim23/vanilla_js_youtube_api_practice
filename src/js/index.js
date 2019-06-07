@@ -3,6 +3,8 @@ import { elements } from './base';
 import Search from './model/Search';
 import * as searchView from './view/searchView';
 import Video from './model/Video';
+import * as videoView from './view/videoView';
+import * as favoriteListView from './view/favoriteListView';
 
 const controlAuth = async () => {
     //create new auth
@@ -12,7 +14,8 @@ const controlAuth = async () => {
     
     if(authSuccess){
         removeAuth();
-        displaySearchForm();
+        searchView.displaySearchForm();
+        favoriteListView.displayFavoriteList();
     }
     
 };
@@ -23,10 +26,6 @@ elements.authBtn.addEventListener('click', controlAuth);
 
 const removeAuth = () => {
     elements.authBtn.style.display = 'none';
-};
-
-const displaySearchForm = () => {
-    elements.search.style.display = 'inline';
 };
 
 const showAuthFailure = () => {
@@ -56,11 +55,31 @@ elements.searchBtn.addEventListener('click', e => {
     controlSearch();
 });
 
+const controlVideo = async (id) => {
+    const video = new Video(id);
+
+    try{
+        await video.getVideo();
+        console.log(video);
+        videoView.clearSingleVideo();
+        videoView.renderSingleVideo(video);
+    }catch(e){
+        console.error('Could not find the video!', e);
+    }
+};
+
 elements.resultsList.addEventListener('click', e => {   
     const selectedId = e.target.parentElement.dataset.itemid;
     searchView.highlightSelected(selectedId);
-    const video = new Video(selectedId);
-    video.getVideo();
-    console.log(video);
+    
+    controlVideo(selectedId);
+});
+
+const controlFavs = () => {
+    
+};
+
+elements.indivVideo.addEventListener('click', e => {
+    console.log(e.target);
 });
 

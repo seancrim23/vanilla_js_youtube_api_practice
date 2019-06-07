@@ -21,7 +21,7 @@ const renderVideo = video => {
     
     const videoHtml = `
         <div style="border-style: double; text-align: center" data-itemid="${id}" class="video__block">
-                <h3 id="video__title">${video.snippet.title}</h6>
+                <h3 id="video__title">${video.snippet.title}</h3>
                 <img style="padding-bottom: 20px" src="${video.snippet.thumbnails.medium.url}" alt="${video.snippet.title}" />
         </div>
     `;
@@ -42,4 +42,8 @@ export const highlightSelected = id => {
         current.style.background = ''; 
     });
     document.querySelector(`[data-itemid="${id}"]`).style.backgroundColor = 'red'; 
+};
+
+export const displaySearchForm = () => {
+    elements.search.style.display = 'inline';
 };
