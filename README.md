@@ -8,7 +8,7 @@ This project will be used for me to practice and refine my vanilla javascript ab
 - [x] be able to select individual video results
 - [x] add ability to favorite videos and see a full favorites list
 - [x] add ability to remove favorites
-- [x] display other videos from the creator of individually selected video
+- [x] display videos related to the video that you have selected
 
 
 ## Bugs
