@@ -9,7 +9,7 @@ export const clearSingleVideo = () => {
 
 export const renderSingleVideo = video => {
     const singleVideoHtml = `
-        <div style="border-style: double; text-align: center" data-itemid="${video.id}" class="video__block">
+        <div style="border-style: double; text-align: center" data-itemid="${video.id}" data-title="${video.title}" class="video__block">
             <h2 id="video__title">${video.title}</h2>
             <img style="padding-bottom: 20px" src="${video.thumbnail}" alt="${video.title}" />
             <p>${video.description}</p>
