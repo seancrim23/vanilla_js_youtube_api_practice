@@ -24,3 +24,34 @@ export const renderSingleVideo = video => {
     elements.indivVideo.insertAdjacentHTML('beforeend', singleVideoHtml);
 };
 
+export const renderRelatedVideos = relatedVideoList => {
+    if(relatedVideoList.length > 0){
+        const relatedVideos = `<h2 class="favs" style="text-align:center"><u>Related Videos</u>:</h2>`;
+        elements.relatedVids.insertAdjacentHTML('afterbegin', relatedVideos);
+    }
+    console.log(relatedVideoList);
+    relatedVideoList.forEach(renderSingleRelatedVideo);
+};
+
+const renderSingleRelatedVideo = relatedVideo => {
+    const singleRelatedVideoHtml = `
+        <div style="border-style: double; text-align: center" class="related__video__block">
+            <h2 id="video__title">${relatedVideo.title}</h2>
+            <img style="padding-bottom: 20px" src="${relatedVideo.thumbnail}" alt="${relatedVideo.title}" />
+            <div class="row">
+                <div class="col-sm"><a href=${relatedVideo.url}>Watch me!</a></div>
+            </div>
+        </div>
+    `;
+    
+    elements.relatedVids.insertAdjacentHTML('beforeend', singleRelatedVideoHtml);
+    
+};
+
+export const clearRelatedVideos = () => {
+    const parentNode = elements.relatedVids;
+    while(parentNode.firstChild){
+        parentNode.removeChild(parentNode.firstChild);
+    }
+};
+

@@ -9,5 +9,7 @@ export const elements = {
     fieldSearch: document.querySelector('.field__search'),
     resultsList: document.querySelector('.results__list'),
     indivVideo: document.querySelector('.indiv__video'),
-    favs: document.querySelector('.favs')
+    favs: document.querySelector('.favs'),
+    favsList: document.querySelector('.favs__list'),
+    relatedVids: document.querySelector('.related__vids')
 };
